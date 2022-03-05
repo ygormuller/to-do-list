@@ -1,22 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>TODO List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TODO List.">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <h1>TODO List</h1>
     <div>
-      <h2>Create nem task</h2>
-      <form>
-        <input name="title"/>
-        <textarea name="description"></textarea>
+      <h2>Create new task</h2> <!--criar pop up-->
+      <form id="new-task-form">
+        <label for="title">Title</label>
+        <input id="title" name="title"/>
+        <label for="description">Description</label>
+        <textarea id="description" name="description"></textarea>
         <button type="submit">Create</button>
+        <button type="reset">Reset</button>
       </form>
     </div>
     <div>
       <h2>Tasks</h2>
-      <ul></ul>
+      <ul id="tasks-list"></ul>
     </div>
     <script src="script.js"></script>
   </body>
