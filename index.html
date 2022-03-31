@@ -3,26 +3,52 @@
   <head>
     <title>TODO List</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="TODO List.">
+    <meta name="description" content="TODO list">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h1>TODO List</h1>
-    <div>
-      <h2>Create new task</h2> <!--criar pop up-->
-      <form id="new-task-form">
-        <label for="title">Title</label>
-        <input id="title" name="title"/>
-        <label for="description">Description</label>
-        <textarea id="description" name="description"></textarea>
-        <button type="submit">Create</button>
-        <button type="reset">Reset</button>
-      </form>
-    </div>
-    <div>
-      <h2>Tasks</h2>
-      <ul id="tasks-list"></ul>
-    </div>
+    <header class="header">
+      <div class="menu">
+        <button class="menu-button" onclick="toggleSideMenu()">Menu</button>
+        <p class="menu-item" onclick="toggleNewTaskPopUp()">Nova Tarefa</p>
+        <a class="menu-item" href="https://github.com/ygormuller/to-do-list" target="_blank">GitHub</a>
+      </div>
+      <div id="side-menu" class="side-menu">
+        <p class="side-menu-item" onclick="toggleNewTaskPopUp()">Nova Tarefa</p>
+        <a class="side-menu-item" href="https://github.com/ygormuller/to-do-list" target="_blank">GitHub</a>
+      </div>
+      <h1 class="header-title">TO DO</h1>
+      <a class="header-github-link" href="https://github.com/ygormuller/to-do-list" target="_blank">GitHub</a>
+    </header>
+    <main class="main">
+      <div class="container">
+        <div id="new-task-popup" class="new-task-popup">
+          <div class="new-task-popup-container">
+            <div class="new-task-popup-header">
+              <h2>Nova Tarefa</h2>
+              <button id="button-new-task-popup-close" onclick="toggleNewTaskPopUp()">X</button>
+            </div>
+            <form id="new-task-form" class="new-task-form">
+              <label for="title">Título</label>
+              <input id="title" name="title" required/>
+              <label for="description">Descrição</label>
+              <textarea id="description" name="description" rows="4" required></textarea>
+              <button type="submit">Salvar</button>
+            </form>
+          </div>
+        </div>
+        <div>
+          <div class="tasks-header">
+            <h2>Tarefas</h2>
+            <button id="button-new-task" onclick="toggleNewTaskPopUp()">Nova Tarefa</button>
+          </div>
+          <ul id="tasks-list" class="tasks-list"></ul>
+        </div>
+      </div>
+    </main>
     <script src="script.js"></script>
   </body>
 </html>
